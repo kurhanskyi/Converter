@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер футів</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Скільки футів потрібно конвертувати</h1>
+        <form method="post">
+            <input type="number" name="feet" placeholder="Введіть кількість футів" required>
+            <button type="submit">Конвертувати</button>
+        </form>
+        {% if feet %}
+        <div class="result">
+            <p>{{ feet }} футів це:</p>
+            <p>{{ inches }} дюймів</p>
+            <p>{{ yards }} ярдів</p>
+            <p>{{ miles }} миль</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
